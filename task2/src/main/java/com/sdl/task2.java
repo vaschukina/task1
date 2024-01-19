@@ -54,7 +54,7 @@ public class task2 {
         }
 
         Timer timer = new Timer();
-        Long period = System.getenv("PERIOD") == null ? 300000 : Long.parseLong(System.getenv("PERIOD"));
+        Long period = Long.parseLong(System.getenv("PERIOD"));
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
