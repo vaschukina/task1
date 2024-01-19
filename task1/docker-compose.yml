@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  db:
+    image: "postgres"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: sdl
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+  app:
+    build: .
+    ports:
+      - "9000:8080"
+    env_file:
+      - .env
+    environment:
+      DB_URL: jdbc:postgresql://db/sdl
+    depends_on:
+      - db
