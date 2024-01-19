@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class task1 {
+public class task2 {
 
     public static void showVersion() {
 
