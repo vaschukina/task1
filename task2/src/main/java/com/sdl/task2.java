@@ -11,13 +11,6 @@ public class task2 {
 
     public static void showVersion() {
 
-        String log_path = System.getenv("LOG_PATH") == null ? "log.txt" : System.getenv("LOG_PATH");
-        try {
-            System.setErr(new PrintStream(new File(log_path)));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
         String DB_URL = System.getenv("DB_URL");
         String USERNAME = System.getenv("USERNAME");
         String PASSWORD = System.getenv("PASSWORD");
@@ -52,6 +45,13 @@ public class task2 {
     }
 
     public static void main(String[] argv)  {
+        String log_path = System.getenv("LOG_PATH") == null ? "log.txt" : System.getenv("LOG_PATH");
+        try {
+            System.setErr(new PrintStream(new File(log_path)));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
         Timer timer = new Timer();
         Long period = System.getenv("PERIOD") == null ? 300000 : Long.parseLong(System.getenv("PERIOD"));
         timer.schedule(new TimerTask() {
