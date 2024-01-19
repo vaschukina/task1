@@ -45,11 +45,12 @@ public class task2 {
     }
 
     public static void main(String[] argv)  {
-        String log_path = System.getenv("LOG_PATH") == null ? "log.txt" : System.getenv("LOG_PATH");
-        try {
-            System.setErr(new PrintStream(new File(log_path)));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+        if (System.getenv("LOG_PATH") != null) {
+            try {
+                System.setErr(new PrintStream(new File(System.getenv("LOG_PATH"))));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
         }
 
         Timer timer = new Timer();
