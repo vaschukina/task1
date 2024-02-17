@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>task2</artifactId>
+    <artifactId>task3</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <build>
@@ -27,7 +27,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.sdl.task2</mainClass>
+                            <mainClass>com.sdl.task3</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

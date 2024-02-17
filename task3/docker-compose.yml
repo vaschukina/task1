@@ -17,6 +17,5 @@ services:
       - .env
     environment:
       DB_URL: jdbc:postgresql://db/sdl
-      PERIOD: ${PERIOD:-300000}
     depends_on:
       - db
